@@ -6,6 +6,7 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import { TypeAnimation } from 'react-type-animation';
 import './fonts/font.css';
 
 export default function Hero() {
@@ -26,19 +27,19 @@ export default function Hero() {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
+          alignItems: 'left',
           pt: { xs: 14, sm: 20 },
           pb: { xs: 8, sm: 12 },
         }}
       >
-        <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
+        <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '100%' }}}>
           <Typography
             variant="h1"
             sx={{
               display: 'flex',
               flexDirection: { xs: 'column', md: 'row' },
-              alignSelf: 'center',
-              textAlign: 'center',
+              align: 'left',
+              textAlign: 'left',
               fontSize: 'clamp(3rem, 10vw, 4rem)',
               fontFamily: 'logirent',
                 color: (theme) =>
@@ -64,17 +65,47 @@ export default function Hero() {
             </Typography> */}
           </Typography>
           <Typography
-            textAlign="center"
+            textAlign="left"
             color="text.secondary"
-            sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' }, fontFamily: 'Varela', fontSize: '22px'}}
+            sx={{ alignSelf: 'left', width: { sm: '100%', md: '50%' }, fontFamily: 'Varela', fontSize: '22px'}}
           >
             Explore our cutting-edge dashboard, delivering high-quality solutions
             tailored to your needs. Elevate your experience with top-tier features
             and services.
           </Typography>
+          <Typography
+            variant="h1"
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              align: 'left',
+              textAlign: 'left',
+              fontSize: 'clamp(1rem, 2vw, 2rem)',
+              fontFamily: 'roboto',
+                color: (theme) =>
+                  theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+            }}
+          >
+            <TypeAnimation
+  sequence={[
+    // Same substring at the start will only be typed once, initially
+    'Code | Create | Concour',
+    1000,
+    'Battle of Development',
+    1000,
+    'Mark the Date',
+    1000,
+    '15.08.2024',
+    1000,
+  ]}
+  speed={50}
+  repeat={Infinity}
+/>
+            
+          </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
-            alignSelf="center"
+            alignSelf="left"
             spacing={1}
             useFlexGap
             sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}

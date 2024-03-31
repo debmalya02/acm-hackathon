@@ -7,3 +7,7 @@
     font-family: 'Varela';
     src: url('./VarelaRound-Regular.ttf');
   }
+  @font-face {
+    font-family: 'roboto';
+    src: url('./RobotoMono-Regular.ttf');
+  }

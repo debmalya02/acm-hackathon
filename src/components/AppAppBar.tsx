@@ -12,6 +12,7 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 import './fonts/font.css';
+import logoImage from './assets/logo.png';
 
 
 const logoStyle = {
@@ -86,17 +87,23 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                 flexGrow: 1,
                 display: 'flex',
                 alignItems: 'center',
-                ml: '-18px',
-                px: 0,
+                ml: '-1px',
+                px: 1,
+
               }}
             >
-              <img
-                src={
-                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
-                }
-                style={logoStyle}
-                alt="logo of sitemark"
-              />
+              <Box sx={{
+                mb: '5px',
+
+              }}>
+                <img
+                  src={
+                    logoImage
+                  }
+                  style={logoStyle}
+                  alt="logo of sitemark"
+                />
+              </Box>
               <Box sx={{ display: { xs: 'none', md: 'flex'}}}>
                 <MenuItem
                   onClick={() => scrollToSection('features')}
