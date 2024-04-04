@@ -13,10 +13,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 import './fonts/font.css';
 import logoImage from './assets/logo.png';
+import logoImageSecond from './assets/logo1.png';
 
 
 const logoStyle = {
-  width: '140px',
+  width: '250px',
   height: 'auto',
   cursor: 'pointer',
 };
@@ -98,7 +99,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               }}>
                 <img
                   src={
-                    logoImage
+                    logoImageSecond
                   }
                   style={logoStyle}
                   alt="logo of sitemark"

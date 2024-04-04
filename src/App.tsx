@@ -4,6 +4,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { PaletteMode } from '@mui/material';
 import AppAppBar from './components/AppAppBar'
 import Hero from './components/Hero';
+import AboutUs from './components/AboutUs';
+import Timer from './components/Timer';
 import getLPTheme from './getLPTheme';
 import ToggleButton from '@mui/material/ToggleButton';
 import Box from '@mui/material/Box';
@@ -76,6 +78,8 @@ function App() {
       <CssBaseline />
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
       <Hero />
+      <AboutUs />
+
       {/* <ToggleCustomTheme
         showCustomTheme={showCustomTheme}
         toggleCustomTheme={toggleCustomTheme}
