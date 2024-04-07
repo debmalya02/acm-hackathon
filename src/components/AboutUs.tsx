@@ -1,119 +1,276 @@
-import Box from '@mui/material/Box';
-import { alpha } from '@mui/material';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
-
-import './fonts/font.css';
-
-
-
+import { Box, alpha } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Grid from "@mui/material/Grid";
+import About1 from "./assets/about1.png";
+import Video from "./assets/acmvideo.mp4";
+import "./fonts/font.css";
 
 function AboutUs() {
   return (
-<Container
-id="image"
-sx={(theme) => ({
-  mt: { xs: 8, sm: 10 },
-  alignSelf: 'center',
-  alignContent: 'centre ',
-  height: { xs: 200, sm: 500 },
-  backgroundImage:
-    theme.palette.mode === 'light'
-      ? 'url("/static/images/templates/templates-images/hero-light.png")'
-      : 'url("/static/images/templates/templates-images/hero-dark.png")',
-  backgroundSize: 'cover',
-  borderRadius: '10px',
-  outline: '1px solid',
-  outlineColor:
-    theme.palette.mode === 'light'
-      ? alpha('#BFCCD9', 0.5)
-      : alpha('#9CCCFC', 0.1),
-  boxShadow:
-    theme.palette.mode === 'light'
-      ? `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`
-      : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
-})}
->
-<Container
-  sx={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    pt: { xs: 14, sm: 10 },
-    pb: { xs: 8, sm: 12 },
-  }}
->
-  <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
-    <Typography
-      variant="h1"
-      sx={{
-        display: 'flex',
-        flexDirection: { xs: 'column', md: 'row' },
-        alignSelf: 'center',
-        textAlign: 'center',
-        fontSize: 'clamp(3.5rem, 10vw, 4rem)',
-        fontFamily: 'logirent'
-      }}
-    >
-      What is&nbsp;
-      <Typography
-        component="span"
-        variant="h1"
+    <Box id="aboutus">
+      <Box
         sx={{
-          fontSize: 'clamp(3rem, 10vw, 4rem)',
-          fontFamily: 'logirent',
-          color: (theme) =>
-            theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+          alignSelf: "center",
+          textAlign: "center",
         }}
       >
-        hackspire
-      </Typography>
-    </Typography>
-    <Typography
-      textAlign="center"
-      color="text.secondary"
-      sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' }, fontFamily: 'Varela', fontSize: '20px',}}
-    >
-      Hackspire is a statewide initiative to provide engineering students to solve some of the common problems we face in our daily life, and thus inculcate a culture of product innovation and a mindset of real time problem solving.
-    </Typography>
-    </Stack>
+        <Typography
+          variant="h1"
+          sx={{
+            fontSize: "clamp(3.5rem, 10vw, 4rem)",
+            fontFamily: "blanka",
+          }}
+        >
+          About&nbsp;
+          <Typography
+            component="span"
+            variant="h1"
+            sx={{
+              fontSize: "clamp(3rem, 10vw, 4rem)",
+              fontFamily: "blanka",
+              color: (theme) =>
+                theme.palette.mode === "light"
+                  ? "primary.main"
+                  : "primary.light",
+            }}
+          >
+            us
+          </Typography>
+        </Typography>
+      </Box>
+      <Container>
+        <Container
+          sx={(theme) => ({
+            mt: { xs: 8, sm: 10 },
+            display: "flex",
+            alignSelf: "center",
+            alignContent: "middle ",
+            height: "680px",
+            alignItems: "center",
+            pt: { xs: 20, sm: 10 },
+            pb: { xs: 8, sm: 12 },
+            [theme.breakpoints.up("xs")]: {
+              backgroundSize: "cover",
+              borderRadius: "10px",
+              outline: "1px solid",
+              outlineColor:
+                theme.palette.mode === "light"
+                  ? alpha("#BFCCD9", 0.5)
+                  : alpha("#9CCCFC", 0.1),
+              boxShadow:
+                theme.palette.mode === "light"
+                  ? `0 0 12px 8px ${alpha("#9CCCFC", 0.2)}`
+                  : `0 0 24px 12px ${alpha("#033363", 0.2)}`,
+            },
+          })}
+        >
+          <video
+            id="bannerVideo"
+            autoPlay
+            muted
+            loop
+            style={{ marginTop: "10px" }}
+          >
+            <source src={Video} type="video/mp4" />
+          </video>
+        </Container>
+      </Container>
+      <Grid
+        container
+        spacing={1}
+        sm="auto"
+        sx={(theme) => ({
+          width: "100%",
+          [theme.breakpoints.down("sm")]: {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          },
 
-    {/* <Stack
-      direction={{ xs: 'column', sm: 'row' }}
-      alignSelf="center"
-      spacing={1}
-      useFlexGap
-      sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
-    >
-      <TextField
-        id="outlined-basic"
-        hiddenLabel
-        size="small"
-        variant="outlined"
-        aria-label="Enter your email address"
-        placeholder="Your email address"
-        inputProps={{
-          autocomplete: 'off',
-          ariaLabel: 'Enter your email address',
-        }}
-      />
-      <Button variant="contained" color="primary">
-        Start now
-      </Button>
-    </Stack>
-    <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
-      By clicking &quot;Start now&quot; you agree to our&nbsp;
-      <Link href="#" color="primary">
-        Terms & Conditions
-      </Link>
-      .
-    </Typography>
-  </Stack> */}
-</Container>
-</Container>
+          pt: { xs: 0, sm: 15 },
+          pl: { sm: 15 },
+        })}
+      >
+        <Grid
+          item
+          sx={{
+            mt:{xs:5},
+            pl: { sm: 45, xs: 90 },
+            display: { xs: "none", sm: "block" },
+            
+          }}
+        >
+          <img
+            src={About1}
+            alt="about1"
+            style={{ width: "500px", height: "auto", cursor: "pointer" }}
+          />
+        </Grid>
+        <Grid
+          item
+          sm="auto"
+          
+          sx={{ width: { xs: "40%", sm: "40%" }, ml:{xs: 40} }}
+        >
+          <Stack spacing={2}>
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: "clamp(3.5rem, 10vw, 4rem)",
+                fontFamily: "blanka",
+              }}
+            >
+              What is
+            </Typography>
+            <Typography
+                component="span"
+                variant="h1"
+                sx={{
+                  fontSize: "clamp(3rem, 10vw, 4rem)",
+                  fontFamily: "blanka",
+                  color: (theme) =>
+                    theme.palette.mode === "light"
+                      ? "primary.main"
+                      : "primary.light",
+                  pl:{xs:30}
+                }}
+              >
+                Hackspire
+              </Typography>
 
-  )
+            <Typography
+              color="text.secondary"
+              sx={{
+                alignSelf: "left",
+                width: { sm: "100%", md: "100%" },
+                fontFamily: "Varela",
+                fontSize: "22px",
+                pt:{xs:5}
+              }}
+            >
+              Hackspire is a statewide initiative to provide engineering
+              students to solve some of the common problems we face in our daily
+              life, and thus inculcate a culture of product innovation and a
+              mindset of real time problem solving.
+            </Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: "clamp(3.5rem, 10vw, 4rem)",
+                fontFamily: "blanka",
+                pt:{xs:10}
+              }}
+            >
+              important
+            </Typography>
+            <Typography
+          variant="h1"
+          sx={{
+            fontSize: "clamp(2.5rem, 10vw, 2rem)",
+            fontFamily: "blanka",
+            color:"primary.light",
+            pl:{xs:17}
+          }}
+        >
+          Dates&nbsp;
+          <Typography
+            component="span"
+            variant="h1"
+            sx={{
+              fontSize: "clamp(2.5rem, 10vw, 2rem)",
+              fontFamily: "blanka",
+              color:"white"
+            }}
+          >
+            And&nbsp;
+          </Typography>
+          <Typography
+            component="span"
+            variant="h1"
+            sx={{
+              fontSize: "clamp(2.5rem, 10vw, 2rem)",
+              fontFamily: "blanka",
+              color:"primary.white"
+            }}
+          >
+            Deadline
+          </Typography>
+        </Typography>
+
+        <Typography
+            component="span"
+            variant="h1"
+            sx={{
+              fontSize:"22px",
+              fontFamily: "Varela",
+              color:"#1DD8FE",
+              pt:{xs:5}
+            }}
+          >
+            HACKSPIRE Registration Starts :&nbsp;
+            <Typography
+            component="span"
+            variant="h1"
+            sx={{
+              fontSize:"22px",
+              fontFamily: "Varela",
+              color:"white"
+            }}
+          >
+            13th June, 2024
+          </Typography>
+          </Typography>
+          <Typography
+            component="span"
+            variant="h1"
+            sx={{
+              fontSize:"22px",
+              fontFamily: "Varela",
+              color:"#1DD8FE"
+            }}
+          >
+            Registration Closed :&nbsp;
+            <Typography
+            component="span"
+            variant="h1"
+            sx={{
+              fontSize:"22px",
+              fontFamily: "Varela",
+              color:"white"
+            }}
+          >
+            13th June, 2024
+          </Typography>
+          </Typography>
+          <Typography
+            component="span"
+            variant="h1"
+            sx={{
+              fontSize:"22px",
+              fontFamily: "Varela",
+              color:"#1DD8FE"
+            }}
+          >
+            HACKSPIRE :&nbsp;
+            <Typography
+            component="span"
+            variant="h1"
+            sx={{
+              fontSize:"22px",
+              fontFamily: "Varela",
+              color:"white"
+            }}
+          >
+            13th June, 2024
+          </Typography>
+          </Typography>
+          </Stack>
+        </Grid>
+      </Grid>
+    </Box>
+  );
 }
 
-export default AboutUs
+export default AboutUs;

@@ -40,22 +40,22 @@ function Timer() {
         <div>
             <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
               <div className="flex flex-col p-2 bg-info rounded-box text-accent-content" data-theme="ligt">
-                <span className="countdown font-mono text-4xl">
+                <span className="countdown font-blanka text-4xl">
                   <span style={{ "--value": days } as React.CSSProperties}></span>
                 </span>
               </div>
               <div className="flex flex-col p-2 bg-info rounded-box text-accent-content" data-theme="ligt">
-                <span className="countdown font-mono text-4xl">
+                <span className="countdown text-4xl font-blanka">
                   <span style={{ "--value": hours } as React.CSSProperties}> </span>
                 </span >
               </div>
               <div className="flex flex-col p-2 bg-info rounded-box text-accent-content" data-theme="ligt">
-                <span className="countdown font-mono text-4xl">
+                <span className="countdown font-blanka text-4xl">
                   <span style={{ "--value": minutes } as React.CSSProperties}></span>
                 </span>
               </div>
               <div className="flex flex-col p-2 bg-info rounded-box text-accent-content" data-theme="ligt">
-                <span className="countdown font-mono text-4xl">
+                <span className="countdown font-blanka text-4xl">
                   <span style={{ "--value": seconds } as React.CSSProperties}></span>
                 </span>
               </div>

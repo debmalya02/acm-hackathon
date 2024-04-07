@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: ["winter"],
+
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        // we name our custom font "tiempos"
+        blanka: ["blanka", "serif"],
+      },
+    },
+  },
   plugins: [require("daisyui")],
 };
