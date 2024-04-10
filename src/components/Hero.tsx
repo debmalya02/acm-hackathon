@@ -13,7 +13,7 @@ import Timer from "./Timer";
 
 export default function Hero() {
   return (
-    <Stack id="hero" alignContent="center" sx={{pb:10}}>
+    <Stack id="hero" alignContent="center" sx={{pb:{xs:20},pt:{xs:10}}}>
       <Grid
         container
         spacing={1}
@@ -85,10 +85,7 @@ export default function Hero() {
               sx={{
                 fontSize: "clamp(1rem, 2vw, 2rem)",
                 fontFamily: "blanka",
-                color: (theme) =>
-                  theme.palette.mode === "light"
-                    ? "primary.main"
-                    : "primary.light",
+                color: "#1DD8FE"
               }}
             >
               <TypeAnimation

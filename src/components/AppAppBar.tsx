@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PaletteMode } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,7 +10,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
-import ToggleColorMode from "./ToggleColorMode";
+import ContactUs from './ContactUs';
 import "./fonts/font.css";
 import logoImage from "./assets/logo.png";
 const logoStyle = {
@@ -19,12 +19,18 @@ const logoStyle = {
   cursor: "pointer",
 };
 
-interface AppAppBarProps {
-  mode: PaletteMode;
-  toggleColorMode: () => void;
-}
+const AppAppBar = () =>{
 
-function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
+  let navigate = useNavigate();
+  const routeTeam = () =>{ 
+    let path = `team`; 
+    navigate(path);
+  }
+  const routeHome = () =>{ 
+    let path = `/`; 
+    navigate(path);
+  }
+
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -68,25 +74,19 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
         <Container maxWidth="xl">
           <Toolbar
             variant="regular"
-            sx={(theme) => ({
+            sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
               flexShrink: 0,
               borderRadius: "999px",
-              bgcolor:
-                theme.palette.mode === "light"
-                  ? "rgba(255, 255, 255, 0.4)"
-                  : "rgba(0, 0, 0, 0.4)",
+              bgcolor: "rgba(0, 0, 0, 0.4)",
               backdropFilter: "blur(24px)",
               height: "90px",
               border: "1px solid",
               borderColor: "divider",
-              boxShadow:
-                theme.palette.mode === "light"
-                  ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
-                  : "0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)",
-            })}
+              boxShadow: "0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)",
+            }}
           >
             <Box
               sx={{
@@ -104,7 +104,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                 }}
               >
                 <img
-                  onClick={() => scrollToSection("hero")}
+                  onClick={routeHome}
                   src={logoImage}
                   style={logoStyle}
                   alt="logo of sitemark"
@@ -131,17 +131,19 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   </Button>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection("processflow")}
+                  onClick={routeTeam}
                   sx={{ py: "6px", px: "12px" }}
                 >
-                  <Typography
-                    variant="body2"
-                    color="text.primary"
-                    fontSize="20px"
-                    fontFamily="Varela"
-                  >
-                    Executive Team
-                  </Typography>
+                  
+                    <Typography
+                      variant="body2"
+                      color="text.primary"
+                      fontSize="20px"
+                      fontFamily="Varela"
+                    >
+                      Executive Team
+                    </Typography>
+               
                 </MenuItem>
                 <MenuItem
                   onClick={() => scrollToSection("theme")}
@@ -232,10 +234,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                       flexGrow: 1,
                     }}
                   >
-                    <ToggleColorMode
-                      mode={mode}
-                      toggleColorMode={toggleColorMode}
-                    />
+                    
                   </Box>
                   <MenuItem onClick={() => scrollToSection('features')}>
                     Features
@@ -262,7 +261,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
         open={openMenu}
         onClose={handleClose}
         onClick={handleClose}
-        PaperProps={{
+        sx={{
           elevation: 0,
           sx: {
             overflow: "visible",
@@ -282,7 +281,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               right: 14,
               width: 10,
               height: 10,
-              bgcolor: "background.paper",
+              bgcolor: "transparent",
               transform: "translateY(-50%) rotate(45deg)",
               zIndex: 0,
             },
@@ -297,6 +296,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
         <MenuItem onClick={() => scrollToSection("#")}>HACKSPIRE Teams</MenuItem>
         <MenuItem onClick={() => scrollToSection("#")}>HACKSPIRE Rules and Regualation</MenuItem>
       </Menu>
+      <ContactUs/>
     </div>
   );
 }

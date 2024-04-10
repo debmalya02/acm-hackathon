@@ -1,15 +1,21 @@
-import * as React from 'react';
-
+// import * as React from 'react';
+// import ReactDOM from 'react-dom/client'
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+// } from "react-router-dom";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { PaletteMode } from '@mui/material';
 import AppAppBar from './components/AppAppBar'
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import ProcessFlow from './components/ProcessFlow';
 import Theme from './components/Theme';
-import getLPTheme from './getLPTheme';
+import Team from './components/team/Team';
+import Footer from './components/Footer';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 
 
@@ -51,45 +57,66 @@ import CssBaseline from '@mui/material/CssBaseline';
 //   );
 // }
 
+
+
+
 function App() {
-  const [mode, setMode] = React.useState<PaletteMode>('dark');
-  const [showCustomTheme, setShowCustomTheme] = React.useState(true);
-  const LPtheme = createTheme(getLPTheme(mode));
+
+
+  const mode = 'dark';
   const defaultTheme = createTheme({ palette: { mode } });
 
-  const toggleColorMode = () => {
-    setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Box sx={{
+        width: '100%',
+        backgroundImage: 'linear-gradient(to left, #3533CD, #000000)',
+        backgroundSize: '100% 100%',
+        backgroundRepeat: 'no-repeat',
+      
+      }}><AppAppBar /><Hero/><AboutUs/><ProcessFlow/><Theme/><Footer/>
+      </Box>
+    },
+    {
+      path: "team",
+      element: <Box sx={{
+        width: '100%',
+        backgroundImage: 'linear-gradient(to left, #3533CD, #000000)',
+        backgroundSize: '100% 100%',
+        backgroundRepeat: 'no-repeat',
+      
+      }}><AppAppBar/><Team/><Footer/></Box>
+    },
+    
+  ]);
+  
+ 
 
   // const toggleCustomTheme = () => {
   //   setShowCustomTheme((prev) => !prev);
   // };
 
-
-
   return (
-    <ThemeProvider theme={showCustomTheme ? LPtheme : defaultTheme}>
+    
+    <ThemeProvider theme={defaultTheme}>
+      
       <CssBaseline />
-      <Box sx={(theme) => ({
+      <RouterProvider router={router} />
+      {/* <Box sx={{
         width: '100%',
-        backgroundImage:
-          theme.palette.mode === 'light'
-            ? 'linear-gradient(to left, #aad1fa, #FFF)'
-            : 'linear-gradient(to left, #3533CD, #000000)',
+        backgroundImage: 'linear-gradient(to left, #3533CD, #000000)',
         backgroundSize: '100% 100%',
         backgroundRepeat: 'no-repeat',
       
-      })}>
-        <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
+      }}>
+        <AppAppBar />
         <Hero />
         <AboutUs />
         <ProcessFlow />
         <Theme />
-      </Box>
-      {/* <ToggleCustomTheme
-        showCustomTheme={showCustomTheme}
-        toggleCustomTheme={toggleCustomTheme}
-      /> */}
+        <Footer />
+      </Box> */}
     </ThemeProvider>
   )
 }

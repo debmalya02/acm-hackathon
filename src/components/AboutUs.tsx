@@ -23,20 +23,17 @@ function AboutUs() {
             fontFamily: "blanka",
           }}
         >
-          About&nbsp;
+          ABOUT&nbsp;
           <Typography
             component="span"
             variant="h1"
             sx={{
               fontSize: "clamp(3rem, 10vw, 4rem)",
               fontFamily: "blanka",
-              color: (theme) =>
-                theme.palette.mode === "light"
-                  ? "primary.main"
-                  : "primary.light",
+              color: "primary.light",
             }}
           >
-            us
+            US
           </Typography>
         </Typography>
       </Box>
@@ -122,7 +119,7 @@ function AboutUs() {
                 fontFamily: "blanka",
               }}
             >
-              What is
+              WHAT IS
             </Typography>
             <Typography
                 component="span"
@@ -137,7 +134,7 @@ function AboutUs() {
                   pl:{xs:30}
                 }}
               >
-                Hackspire
+                HACKSPIRE
               </Typography>
 
             <Typography
@@ -163,7 +160,7 @@ function AboutUs() {
                 pt:{xs:10}
               }}
             >
-              important
+              IMPORTANT
             </Typography>
             <Typography
           variant="h1"
@@ -174,7 +171,7 @@ function AboutUs() {
             pl:{xs:17}
           }}
         >
-          Dates&nbsp;
+          DATES&nbsp;
           <Typography
             component="span"
             variant="h1"
@@ -184,7 +181,7 @@ function AboutUs() {
               color:"white"
             }}
           >
-            And&nbsp;
+            AND&nbsp;
           </Typography>
           <Typography
             component="span"
@@ -195,7 +192,7 @@ function AboutUs() {
               color:"primary.white"
             }}
           >
-            Deadline
+            DEADLINE
           </Typography>
         </Typography>
 

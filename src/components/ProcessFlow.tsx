@@ -1,7 +1,5 @@
 import { alpha } from '@mui/material';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
 
 function ProcessFlow() {
   return (
@@ -31,81 +29,28 @@ function ProcessFlow() {
           },
         })}
         >
-        <Container
-          sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        pt: { xs: 14, sm: 10 },
-        pb: { xs: 8, sm: 12 },
-          }}
-        >
-          <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
-        <Typography
-          variant="h1"
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            alignSelf: 'center',
-            textAlign: 'center',
-            fontSize: 'clamp(3.5rem, 10vw, 4rem)',
-            fontFamily: 'logirent'
-          }}
-        >
-          What is&nbsp;
-          <Typography
-            component="span"
-            variant="h1"
-            sx={{
-              fontSize: 'clamp(3rem, 10vw, 4rem)',
-              fontFamily: 'logirent',
-              color: (theme) =>
-                theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
-            }}
-          >
-            hackspire
-          </Typography>
-        </Typography>
-        <Typography
-          textAlign="center"
-          color="text.secondary"
-          sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' }, fontFamily: 'Varela', fontSize: '20px',}}
-        >
-          Hackspire is a statewide initiative to provide engineering students to solve some of the common problems we face in our daily life, and thus inculcate a culture of product innovation and a mindset of real time problem solving.
-        </Typography>
-        </Stack>
-        {/* <Stack
-          direction={{ xs: 'column', sm: 'row' }}
-          alignSelf="center"
-          spacing={1}
-          useFlexGap
-          sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
-        >
-          <TextField
-            id="outlined-basic"
-            hiddenLabel
-            size="small"
-            variant="outlined"
-            aria-label="Enter your email address"
-            placeholder="Your email address"
-            inputProps={{
-              autocomplete: 'off',
-              ariaLabel: 'Enter your email address',
-            }}
-          />
-          <Button variant="contained" color="primary">
-            Start now
-          </Button>
-        </Stack>
-        <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
-          By clicking &quot;Start now&quot; you agree to our&nbsp;
-          <Link href="#" color="primary">
-            Terms & Conditions
-          </Link>
-          .
-        </Typography>
-          </Stack> */}
-        </Container>
+        <div className="panel">
+    <div className="container">
+      <div className="photo">
+        <div className="db">
+          <img className="dp" src="nft6.png" alt="" />
+        </div>
+      </div>
+      <div className="about">
+        <div className="spand">
+          <span className="sp">Debarati</span>
+          <span className="sp">chairman, TEAM FUTURE</span>
+        </div>
+        <div className="patron">
+          <span className="patron1">PATRON</span>
+          <span className="border">
+            <p />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
         </Container>
 
   )
